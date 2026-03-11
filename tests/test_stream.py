@@ -40,7 +40,7 @@ class TestBuildPipeline(unittest.TestCase):
         send_rich_event_mock = Mock()
         
         # Act
-        pipeline = build_pipeline(source, send_rich_event_mock)
+        pipeline = build_pipeline(source, send_rich_event_mock, None, None)
         pipeline.subscribe(
             on_next=lambda x: received_events.append(x),
             on_error=lambda e: self.fail(f"Pipeline error: {e}")
